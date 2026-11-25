@@ -144,8 +144,8 @@
     </div>
 
     <div class="carte">
-      <!-- Remplace VOTRE_ID par ton identifiant Formspree -->
-      <form id="formulaire" action="https://formspree.io/f/VOTRE_ID" method="POST">
+      <!-- Le formulaire ouvre la messagerie du visiteur avec un mail prérempli -->
+      <form id="formulaire">
         <div id="resume">Choisissez vos dates dans le calendrier.</div>
         <input type="hidden" name="arrivee" id="champArrivee">
         <input type="hidden" name="depart" id="champDepart">
@@ -161,7 +161,7 @@
         <label>Message</label>
         <textarea name="message" rows="3"></textarea>
         <p style="margin-top:16px;"><button class="btn" id="boutonEnvoyer" type="submit" disabled>Envoyer ma demande</button></p>
-        <p class="legende">Votre demande sera confirmée par email ou téléphone. Aucun paiement en ligne.</p>
+        <p class="legende">Votre messagerie s’ouvrira avec un mail prêt à envoyer. Votre demande sera confirmée par email ou téléphone. Aucun paiement en ligne.<br>Vous préférez appeler ? <a href="tel:+33617444957">06 17 44 49 57</a></p>
       </form>
     </div>
   </div>
@@ -263,6 +263,27 @@ function majResume() {
   document.getElementById("champTotal").value = "à partir de " + total + " €";
   b.disabled = false;
 }
+
+// Envoi de la demande par mail prérempli
+document.getElementById("formulaire").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target;
+  const nuits = Math.round((new Date(depart) - new Date(arrivee)) / 86400000);
+  const sujet = `Demande de réservation – ${joli(arrivee)} au ${joli(depart)}`;
+  const corps = [
+    "Bonjour,", "",
+    "Je souhaite réserver Le Logis de Berthoult :",
+    `- Arrivée : ${joli(arrivee)}`,
+    `- Départ : ${joli(depart)} (${nuits} nuit${nuits > 1 ? "s" : ""})`,
+    `- Voyageurs : ${f.voyageurs.value}`,
+    `- Estimation affichée : ${f.total.value}`, "",
+    `Nom : ${f.nom.value}`,
+    `Email : ${f.email.value}`,
+    `Téléphone : ${f.telephone.value || "-"}`, "",
+    f.message.value ? "Message : " + f.message.value : "",
+  ].join("\n");
+  window.location.href = "mailto:terresdememoires@gmail.com?subject=" + encodeURIComponent(sujet) + "&body=" + encodeURIComponent(corps);
+});
 
 // Synchronisation avec Airbnb (via la fonction Netlify)
 fetch("/.netlify/functions/disponibilites?v=2")
