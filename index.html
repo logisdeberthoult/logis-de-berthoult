@@ -41,6 +41,7 @@
   #visionneuse.ouverte { display:flex; }
   #visionneuse img { max-width:100%; max-height:100%; border-radius:8px; }
   @media (max-width:600px){ .galerie .grande{grid-column:auto;} .galerie .grande img{height:220px;} }
+  .direct { background:#fff; border-left:5px solid var(--rouge); border-radius:10px; padding:14px 18px; margin:0 auto 20px; max-width:720px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,.06); }
   /* Calendrier */
   .cal-entete { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
   .cal-entete button { background:var(--vert); color:#fff; border:none; border-radius:8px; padding:6px 14px; cursor:pointer; font-size:1.1rem; }
@@ -68,7 +69,7 @@
   <img class="logo" src="logo.png" alt="Gîte Le Logis de Berthoult – Terres de Mémoires">
   <h1>Le Logis de Berthoult</h1>
   <p>Gîte de charme à Bailleul-Sir-Berthoult, aux portes d'Arras</p>
-  <a href="#reserver" class="btn">Réserver vos dates</a>
+  <a href="#reserver" class="btn">Réserver en direct au meilleur prix</a>
 </header>
 
 <nav>
@@ -114,6 +115,7 @@
 
 <section id="tarifs">
   <h2>Tarifs</h2>
+  <div class="direct">💡 <strong>Le meilleur prix, c'est ici :</strong> en réservant en direct, vous ne payez aucuns frais de service de plateforme.</div>
   <div class="grille">
     <div class="carte" style="text-align:center;">
       <p>La nuit</p><p class="prix">dès <span id="prixNuit"></span> €</p><p class="legende" style="margin-top:4px;">selon les week-ends et les périodes</p>
