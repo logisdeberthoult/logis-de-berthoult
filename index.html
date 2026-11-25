@@ -26,6 +26,21 @@
   .btn { display:inline-block; background:var(--rouge); color:#fff; padding:12px 26px; border-radius:30px; text-decoration:none; font-weight:700; border:none; cursor:pointer; font-size:1rem; }
   .btn:disabled { opacity:.5; cursor:not-allowed; }
   .prix { font-size:1.8rem; color:var(--rouge); font-weight:700; }
+  .galerie { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; align-items:start; }
+  .galerie figure { position:relative; margin:0; border-radius:12px; overflow:hidden; cursor:zoom-in; background:#ddd; }
+  .galerie img { width:100%; height:220px; object-fit:cover; display:block; transition:transform .3s; }
+  .galerie figure:hover img { transform:scale(1.04); }
+  .galerie figcaption { position:absolute; left:0; right:0; bottom:0; padding:8px 12px; color:#fff; font-weight:700; font-size:.9rem; background:linear-gradient(transparent,rgba(0,0,0,.6)); }
+  .galerie .grande { grid-column:span 2; grid-row:span 2; }
+  .galerie .grande img { height:452px; }
+  @media (max-width:600px){ .galerie .grande{grid-row:auto;} }
+  .details { grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); }
+  .details img { height:180px; }
+  .sous-titre { font-family:'Playfair Display',serif; color:var(--vert); text-align:center; margin:32px 0 14px; font-size:1.4rem; }
+  #visionneuse { position:fixed; inset:0; background:rgba(0,0,0,.9); display:none; align-items:center; justify-content:center; z-index:100; cursor:zoom-out; padding:16px; }
+  #visionneuse.ouverte { display:flex; }
+  #visionneuse img { max-width:100%; max-height:100%; border-radius:8px; }
+  @media (max-width:600px){ .galerie .grande{grid-column:auto;} .galerie .grande img{height:220px;} }
   /* Calendrier */
   .cal-entete { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
   .cal-entete button { background:var(--vert); color:#fff; border:none; border-radius:8px; padding:6px 14px; cursor:pointer; font-size:1.1rem; }
@@ -70,10 +85,25 @@
     l'histoire de notre territoire : la Grande Guerre et le passé minier du Pas-de-Calais.
     Idéal pour découvrir Arras, Vimy et les sites de mémoire.
   </p>
-  <!-- Pour ajouter des photos : envoie-les dans le dépôt et ajoute une ligne <img src="photo2.jpg" alt="..."> -->
-  <div class="grille photos" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
-    <img src="photo2.jpg" alt="Le salon du Logis de Berthoult, avec canapé, télévision et affiches d'Arras, Lens et des terrils" style="height:280px;">
-    <img src="photo1.jpg" alt="Le coin repas du Logis de Berthoult, avec le chevalement de mine dessiné au mur" style="height:280px;">
+  <!-- Galerie : cliquer sur une photo l'agrandit -->
+  <div class="galerie">
+    <figure class="grande"><img src="photo2.jpg" alt="Le salon, avec canapé, télévision et affiches d'Arras, Lens et des terrils"><figcaption>Le salon</figcaption></figure>
+    <figure><img src="photo1.jpg" alt="Le coin repas, avec le chevalement de mine dessiné au mur"><figcaption>Le coin repas</figcaption></figure>
+    <figure><img src="photo3.jpg" alt="La cuisine équipée et le mur en briques"><figcaption>La cuisine</figcaption></figure>
+    <figure><img src="photo7.jpg" alt="La chambre avec lit double et salle d'eau attenante"><figcaption>La chambre</figcaption></figure>
+    <figure><img src="photo8.jpg" alt="La douche de la salle d'eau"><figcaption>La salle d'eau</figcaption></figure>
+    <figure><img src="photo4.jpg" alt="La cuisine avec plaque, four et réfrigérateur"><figcaption>Cuisine tout équipée</figcaption></figure>
+    <figure><img src="photo9.jpg" alt="Le lavabo et les toilettes de la salle d'eau"><figcaption>Lavabo et WC</figcaption></figure>
+    <figure><img src="photo5.jpg" alt="Le salon ouvert sur la cuisine"><figcaption>Salon ouvert sur la cuisine</figcaption></figure>
+    <figure><img src="photo6.jpg" alt="Le lave-linge séchant intégré à la cuisine"><figcaption>Lave-linge séchant</figcaption></figure>
+  </div>
+  <h3 class="sous-titre">Les petits détails</h3>
+  <div class="galerie details">
+    <figure><img src="photo10.jpg" alt="Une lampe de mineur allumée"></figure>
+    <figure><img src="photo11.jpg" alt="La machine à café et les tasses"></figure>
+    <figure><img src="photo12.jpg" alt="Une tasse à café sur la table"></figure>
+    <figure><img src="photo13.jpg" alt="L'évier noir et le carrelage métro"></figure>
+    <figure><img src="photo14.jpg" alt="Un flacon ambré décoratif"></figure>
   </div>
   <div class="grille" style="margin-top:24px;">
     <div class="carte"><strong>🏠 Indépendant</strong><br>Entrée privée, cuisine équipée</div>
@@ -149,7 +179,13 @@
   Photos : 5studio
 </footer>
 
+<div id="visionneuse" onclick="this.classList.remove('ouverte')"><img alt=""></div>
 <script>
+document.querySelectorAll(".galerie img").forEach(img => img.addEventListener("click", () => {
+  const v = document.getElementById("visionneuse");
+  v.querySelector("img").src = img.src; v.querySelector("img").alt = img.alt; v.classList.add("ouverte");
+}));
+
 // ====== À MODIFIER : tes tarifs ======
 const PRIX_NUIT = 75;     // prix par nuit
 const PRIX_MENAGE = 30;   // frais de ménage
