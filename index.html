@@ -265,7 +265,7 @@ function majResume() {
 }
 
 // Synchronisation avec Airbnb (via la fonction Netlify)
-fetch("/.netlify/functions/disponibilites")
+fetch("/.netlify/functions/disponibilites?v=2")
   .then(r => r.json())
   .then(dates => { reservees = dates; })
   .catch(() => {})
