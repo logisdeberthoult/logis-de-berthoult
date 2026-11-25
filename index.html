@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Logis de Berthoult – Gîte à Bailleul-Sir-Berthoult, près d'Arras</title>
+<meta name="description" content="Le Logis de Berthoult : location courte durée à Bailleul-Sir-Berthoult, à deux pas d'Arras. Réservez en ligne.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --vert:#2f4a3a; --rouge:#b3322b; --bleu:#3f66a8; --creme:#f7f3ec; --texte:#2b2b2b; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Lato',sans-serif; color:var(--texte); background:var(--creme); line-height:1.6; }
+  h1,h2 { font-family:'Playfair Display',serif; color:var(--vert); }
+  header { background:var(--vert); color:#fff; text-align:center; padding:70px 16px 60px; }
+  header h1 { color:#fff; font-size:2.6rem; }
+  header p { opacity:.9; margin-top:8px; }
+  header a.btn { margin-top:24px; }
+  nav { background:#fff; position:sticky; top:0; z-index:10; box-shadow:0 2px 6px rgba(0,0,0,.08); text-align:center; }
+  nav a { display:inline-block; padding:14px 14px; color:var(--vert); text-decoration:none; font-weight:700; }
+  section { max-width:960px; margin:0 auto; padding:56px 16px; }
+  section h2 { font-size:2rem; margin-bottom:18px; text-align:center; }
+  .grille { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+  .carte { background:#fff; border-radius:12px; padding:22px; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .photos img { width:100%; height:200px; object-fit:cover; border-radius:12px; background:#ddd; }
+  .btn { display:inline-block; background:var(--rouge); color:#fff; padding:12px 26px; border-radius:30px; text-decoration:none; font-weight:700; border:none; cursor:pointer; font-size:1rem; }
+  .btn:disabled { opacity:.5; cursor:not-allowed; }
+  .prix { font-size:1.8rem; color:var(--rouge); font-weight:700; }
+  /* Calendrier */
+  .cal-entete { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .cal-entete button { background:var(--vert); color:#fff; border:none; border-radius:8px; padding:6px 14px; cursor:pointer; font-size:1.1rem; }
+  .mois { font-weight:700; font-size:1.1rem; text-transform:capitalize; }
+  .jours { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; text-align:center; }
+  .jours .nom { font-size:.8rem; font-weight:700; color:#777; }
+  .jour { padding:10px 0; border-radius:8px; background:#fff; cursor:pointer; user-select:none; }
+  .jour.vide { background:transparent; cursor:default; }
+  .jour.passe, .jour.pris { color:#bbb; text-decoration:line-through; cursor:not-allowed; background:#eee; }
+  .jour.choisi { background:var(--rouge); color:#fff; }
+  .jour.entre { background:#f1d3cf; }
+  .legende { font-size:.85rem; color:#666; margin-top:10px; }
+  #chargement { font-size:.9rem; color:#888; text-align:center; margin-bottom:8px; }
+  form label { display:block; font-weight:700; margin:12px 0 4px; }
+  form input, form textarea, form select { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font:inherit; }
+  #resume { background:var(--creme); border-radius:8px; padding:12px; margin-top:12px; }
+  footer { background:var(--vert); color:#fff; text-align:center; padding:30px 16px; font-size:.9rem; }
+  footer a { color:#fff; }
+  @media (max-width:600px){ header h1{font-size:2rem;} nav a{padding:10px 8px;font-size:.9rem;} }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Le Logis de Berthoult</h1>
+  <p>Gîte de charme à Bailleul-Sir-Berthoult, aux portes d'Arras</p>
+  <a href="#reserver" class="btn">Réserver vos dates</a>
+</header>
+
+<nav>
+  <a href="#logis">Le logis</a>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#reserver">Réserver</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="logis">
+  <h2>Le logis</h2>
+  <p style="text-align:center;max-width:700px;margin:0 auto 28px;">
+    Un logement indépendant, avec sa propre entrée et sa propre cuisine, pensé comme un hommage à
+    l'histoire de notre territoire : la Grande Guerre et le passé minier du Pas-de-Calais.
+    Idéal pour découvrir Arras, Vimy et les sites de mémoire.
+  </p>
+  <!-- Remplace les noms de fichiers par tes photos (mets-les dans le même dossier) -->
+  <div class="grille photos">
+    <img src="photo1.jpg" alt="Le séjour">
+    <img src="photo2.jpg" alt="La chambre">
+    <img src="photo3.jpg" alt="La cuisine">
+  </div>
+  <div class="grille" style="margin-top:24px;">
+    <div class="carte"><strong>🏠 Indépendant</strong><br>Entrée privée, cuisine équipée</div>
+    <div class="carte"><strong>📍 Arras à 10 min</strong><br>Commerces et sites de mémoire à proximité</div>
+    <div class="carte"><strong>🌺 Esprit du lieu</strong><br>Coquelicot, bleuet et feuille d'érable</div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <h2>Tarifs</h2>
+  <div class="grille">
+    <div class="carte" style="text-align:center;">
+      <p>La nuit</p><p class="prix"><span id="prixNuit"></span> €</p>
+    </div>
+    <div class="carte" style="text-align:center;">
+      <p>Frais de ménage</p><p class="prix"><span id="prixMenage"></span> €</p>
+    </div>
+    <div class="carte" style="text-align:center;">
+      <p>Séjour minimum</p><p class="prix"><span id="nuitsMin"></span> nuit(s)</p>
+    </div>
+  </div>
+</section>
+
+<section id="reserver">
+  <h2>Réserver</h2>
+  <div class="grille" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start;">
+    <div class="carte">
+      <div id="chargement">Mise à jour des disponibilités…</div>
+      <div class="cal-entete">
+        <button type="button" onclick="changerMois(-1)">‹</button>
+        <span class="mois" id="titreMois"></span>
+        <button type="button" onclick="changerMois(1)">›</button>
+      </div>
+      <div class="jours" id="calendrier"></div>
+      <p class="legende">Cliquez sur votre date d'arrivée, puis sur votre date de départ. Les dates barrées sont indisponibles.</p>
+    </div>
+
+    <div class="carte">
+      <!-- Remplace VOTRE_ID par ton identifiant Formspree -->
+      <form id="formulaire" action="https://formspree.io/f/VOTRE_ID" method="POST">
+        <div id="resume">Choisissez vos dates dans le calendrier.</div>
+        <input type="hidden" name="arrivee" id="champArrivee">
+        <input type="hidden" name="depart" id="champDepart">
+        <input type="hidden" name="total" id="champTotal">
+        <label>Nom et prénom</label>
+        <input type="text" name="nom" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <label>Téléphone</label>
+        <input type="tel" name="telephone">
+        <label>Nombre de voyageurs</label>
+        <select name="voyageurs"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
+        <label>Message</label>
+        <textarea name="message" rows="3"></textarea>
+        <p style="margin-top:16px;"><button class="btn" id="boutonEnvoyer" type="submit" disabled>Envoyer ma demande</button></p>
+        <p class="legende">Votre demande sera confirmée par email ou téléphone. Aucun paiement en ligne.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="carte" style="text-align:center;">
+    <p>📧 <a href="mailto:terresdememoires@gmail.com">terresdememoires@gmail.com</a></p>
+    <p>📞 <a href="tel:+33617444957">06 17 44 49 57</a></p>
+    <p>📍 Bailleul-Sir-Berthoult (62)</p>
+  </div>
+</section>
+
+<footer>
+  © <span id="annee"></span> Le Logis de Berthoult – EI Terres de Mémoires<br>
+  Photos : 5studio
+</footer>
+
+<script>
+// ====== À MODIFIER : tes tarifs ======
+const PRIX_NUIT = 75;     // prix par nuit
+const PRIX_MENAGE = 30;   // frais de ménage
+const NUITS_MIN = 1;      // nombre de nuits minimum
+// =====================================
+
+document.getElementById("prixNuit").textContent = PRIX_NUIT;
+document.getElementById("prixMenage").textContent = PRIX_MENAGE;
+document.getElementById("nuitsMin").textContent = NUITS_MIN;
+document.getElementById("annee").textContent = new Date().getFullYear();
+
+let reservees = [];            // rempli automatiquement depuis Airbnb
+let moisAffiche = new Date(); moisAffiche.setDate(1);
+let arrivee = null, depart = null;
+
+const iso = d => d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+const joli = s => new Date(s + "T12:00").toLocaleDateString("fr-FR", {weekday:"short", day:"numeric", month:"long"});
+
+function changerMois(n) { moisAffiche.setMonth(moisAffiche.getMonth() + n); afficher(); }
+
+function afficher() {
+  const cal = document.getElementById("calendrier");
+  cal.innerHTML = "";
+  document.getElementById("titreMois").textContent =
+    moisAffiche.toLocaleDateString("fr-FR", {month:"long", year:"numeric"});
+  ["L","M","M","J","V","S","D"].forEach(n => cal.insertAdjacentHTML("beforeend", `<div class="nom">${n}</div>`));
+
+  const annee = moisAffiche.getFullYear(), mois = moisAffiche.getMonth();
+  const decalage = (new Date(annee, mois, 1).getDay() + 6) % 7;
+  for (let i = 0; i < decalage; i++) cal.insertAdjacentHTML("beforeend", `<div class="jour vide"></div>`);
+
+  const aujourdhui = iso(new Date());
+  const nbJours = new Date(annee, mois + 1, 0).getDate();
+  for (let j = 1; j <= nbJours; j++) {
+    const d = iso(new Date(annee, mois, j));
+    const div = document.createElement("div");
+    div.className = "jour"; div.textContent = j;
+    if (d < aujourdhui) div.classList.add("passe");
+    else if (reservees.includes(d)) div.classList.add("pris");
+    else div.onclick = () => choisir(d);
+    if (d === arrivee || d === depart) div.classList.add("choisi");
+    else if (arrivee && depart && d > arrivee && d < depart) div.classList.add("entre");
+    cal.appendChild(div);
+  }
+}
+
+function choisir(d) {
+  if (!arrivee || depart || d <= arrivee) { arrivee = d; depart = null; }
+  else {
+    // Vérifie qu'aucune nuit réservée n'est au milieu du séjour
+    let x = new Date(arrivee + "T12:00"), fin = new Date(d + "T12:00"), libre = true;
+    while (x < fin) { if (reservees.includes(iso(x))) { libre = false; break; } x.setDate(x.getDate() + 1); }
+    if (!libre) { alert("Certaines nuits de cette période sont déjà réservées."); arrivee = d; depart = null; }
+    else depart = d;
+  }
+  afficher(); majResume();
+}
+
+function majResume() {
+  const r = document.getElementById("resume"), b = document.getElementById("boutonEnvoyer");
+  b.disabled = true;
+  if (!arrivee) { r.textContent = "Choisissez vos dates dans le calendrier."; return; }
+  if (!depart) { r.innerHTML = `Arrivée : <strong>${joli(arrivee)}</strong><br>Choisissez maintenant la date de départ.`; return; }
+  const nuits = Math.round((new Date(depart) - new Date(arrivee)) / 86400000);
+  if (nuits < NUITS_MIN) { r.textContent = `Séjour minimum : ${NUITS_MIN} nuit(s).`; return; }
+  const total = nuits * PRIX_NUIT + PRIX_MENAGE;
+  r.innerHTML = `Du <strong>${joli(arrivee)}</strong> au <strong>${joli(depart)}</strong><br>
+    ${nuits} nuit(s) × ${PRIX_NUIT} € + ménage ${PRIX_MENAGE} € = <strong>${total} €</strong>`;
+  document.getElementById("champArrivee").value = arrivee;
+  document.getElementById("champDepart").value = depart;
+  document.getElementById("champTotal").value = total + " €";
+  b.disabled = false;
+}
+
+// Synchronisation avec Airbnb (via la fonction Netlify)
+fetch("/.netlify/functions/disponibilites")
+  .then(r => r.json())
+  .then(dates => { reservees = dates; })
+  .catch(() => {})
+  .finally(() => { document.getElementById("chargement").style.display = "none"; afficher(); majResume(); });
+afficher();
+</script>
+</body>
+</html>
