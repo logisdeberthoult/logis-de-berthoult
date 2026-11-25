@@ -116,9 +116,9 @@
   <h2>Tarifs</h2>
   <div class="grille">
     <div class="carte" style="text-align:center;">
-      <p>La nuit</p><p class="prix"><span id="prixNuit"></span> €</p>
+      <p>La nuit</p><p class="prix">dès <span id="prixNuit"></span> €</p><p class="legende" style="margin-top:4px;">selon les week-ends et les périodes</p>
     </div>
-    <div class="carte" style="text-align:center;">
+    <div class="carte" id="carteMenage" style="text-align:center;">
       <p>Frais de ménage</p><p class="prix"><span id="prixMenage"></span> €</p>
     </div>
     <div class="carte" style="text-align:center;">
@@ -187,13 +187,14 @@ document.querySelectorAll(".galerie img").forEach(img => img.addEventListener("c
 }));
 
 // ====== À MODIFIER : tes tarifs ======
-const PRIX_NUIT = 75;     // prix par nuit
-const PRIX_MENAGE = 30;   // frais de ménage
+const PRIX_NUIT = 60;     // prix de base par nuit ("à partir de")
+const PRIX_MENAGE = 0;    // frais de ménage (0 = pas affiché)
 const NUITS_MIN = 1;      // nombre de nuits minimum
 // =====================================
 
 document.getElementById("prixNuit").textContent = PRIX_NUIT;
 document.getElementById("prixMenage").textContent = PRIX_MENAGE;
+if (!PRIX_MENAGE) document.getElementById("carteMenage").style.display = "none";
 document.getElementById("nuitsMin").textContent = NUITS_MIN;
 document.getElementById("annee").textContent = new Date().getFullYear();
 
@@ -252,11 +253,12 @@ function majResume() {
   const nuits = Math.round((new Date(depart) - new Date(arrivee)) / 86400000);
   if (nuits < NUITS_MIN) { r.textContent = `Séjour minimum : ${NUITS_MIN} nuit(s).`; return; }
   const total = nuits * PRIX_NUIT + PRIX_MENAGE;
-  r.innerHTML = `Du <strong>${joli(arrivee)}</strong> au <strong>${joli(depart)}</strong><br>
-    ${nuits} nuit(s) × ${PRIX_NUIT} € + ménage ${PRIX_MENAGE} € = <strong>${total} €</strong>`;
+  r.innerHTML = `Du <strong>${joli(arrivee)}</strong> au <strong>${joli(depart)}</strong> (${nuits} nuit${nuits > 1 ? "s" : ""})<br>
+    Estimation : <strong>à partir de ${total} €</strong>${PRIX_MENAGE ? ` (ménage ${PRIX_MENAGE} € inclus)` : ""}<br>
+    <small>Le prix exact dépend des dates et vous sera confirmé par retour.</small>`;
   document.getElementById("champArrivee").value = arrivee;
   document.getElementById("champDepart").value = depart;
-  document.getElementById("champTotal").value = total + " €";
+  document.getElementById("champTotal").value = "à partir de " + total + " €";
   b.disabled = false;
 }
 
