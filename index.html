@@ -170,7 +170,7 @@
 <section id="contact">
   <h2>Contact</h2>
   <div class="carte" style="text-align:center;">
-    <p>📧 <a href="mailto:terresdememoires@gmail.com">terresdememoires@gmail.com</a></p>
+    <p>📧 <a href="mailto:contact@logisdeberthoult.fr">contact@logisdeberthoult.fr</a></p>
     <p>📞 <a href="tel:+33617444957">06 17 44 49 57</a></p>
     <p>📍 Bailleul-Sir-Berthoult (62)</p>
   </div>
@@ -282,7 +282,7 @@ document.getElementById("formulaire").addEventListener("submit", e => {
     `Téléphone : ${f.telephone.value || "-"}`, "",
     f.message.value ? "Message : " + f.message.value : "",
   ].join("\n");
-  window.location.href = "mailto:terresdememoires@gmail.com?subject=" + encodeURIComponent(sujet) + "&body=" + encodeURIComponent(corps);
+  window.location.href = "mailto:contact@logisdeberthoult.fr?subject=" + encodeURIComponent(sujet) + "&body=" + encodeURIComponent(corps);
 });
 
 // Synchronisation avec Airbnb (via la fonction Netlify)
