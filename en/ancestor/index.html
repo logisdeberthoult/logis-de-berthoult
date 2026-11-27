@@ -1,1 +1,186 @@
-x
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find your WWI ancestor: Canadian and New Zealand soldiers near Arras and Vimy</title>
+<meta name="description" content="A free, step-by-step guide for Canadian and New Zealand families tracing a First World War soldier who served near Arras and Vimy Ridge: official databases, service files, graves and memorials to visit.">
+<link rel="canonical" href="https://logisdeberthoult.fr/en/ancestor/">
+<link rel="icon" type="image/png" href="../../logo.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Find your WWI ancestor near Arras and Vimy">
+<meta property="og:description" content="A free guide for Canadian and New Zealand families preparing a pilgrimage to Vimy Ridge and Arras.">
+<meta property="og:url" content="https://logisdeberthoult.fr/en/ancestor/">
+<meta property="og:image" content="https://logisdeberthoult.fr/en/vimy1.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --vert:#2f4a3a; --rouge:#b3322b; --bleu:#3f66a8; --creme:#f7f3ec; --texte:#2b2b2b; --sable:#c1bf9c; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Lato',sans-serif; color:var(--texte); background:var(--creme); line-height:1.65; }
+  h1,h2,h3 { font-family:'Playfair Display',serif; color:var(--vert); line-height:1.25; }
+  a { color:var(--bleu); }
+  header { background:var(--sable); text-align:center; padding:28px 16px 40px; }
+  header img.logo { width:100%; max-width:520px; height:auto; display:block; margin:0 auto; }
+  header h1 { font-size:2rem; margin-top:18px; }
+  header p.sous { margin:8px auto 0; max-width:640px; font-size:1.1rem; }
+  .btn { display:inline-block; background:var(--rouge); color:#fff; padding:12px 26px; border-radius:30px; text-decoration:none; font-weight:700; margin-top:22px; }
+  .btn.clair { background:#fff; color:var(--vert); margin-left:8px; }
+  nav { background:#fff; position:sticky; top:0; z-index:10; box-shadow:0 2px 6px rgba(0,0,0,.08); text-align:center; }
+  nav a { display:inline-block; padding:14px 12px; color:var(--vert); text-decoration:none; font-weight:700; }
+  section { max-width:960px; margin:0 auto; padding:56px 16px; }
+  section h2 { font-size:2rem; margin-bottom:18px; text-align:center; }
+  .intro { text-align:center; max-width:720px; margin:0 auto 28px; }
+  .deux { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .carte { background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .carte h3 { font-size:1.4rem; margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+  .carte p + p { margin-top:10px; }
+  .drapeau { font-size:1.6rem; }
+  .temps { display:inline-block; background:var(--creme); border-radius:20px; padding:2px 12px; font-size:.9rem; font-weight:700; color:var(--vert); margin-top:12px; }
+  .bandeau { background:var(--vert); color:#fff; }
+  .bandeau h2 { color:#fff; }
+  .bandeau .intro { color:#e9ecea; }
+  .symboles { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+  .symboles div { background:rgba(255,255,255,.08); border-radius:12px; padding:18px; }
+  .symboles strong { display:block; font-size:1.05rem; margin-bottom:4px; }
+  .photos { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+  .photos img { width:100%; height:220px; object-fit:cover; border-radius:12px; display:block; }
+  ul.liste { list-style:none; }
+  ul.liste li { padding:8px 0 8px 28px; position:relative; border-bottom:1px solid #eee; }
+  ul.liste li:last-child { border-bottom:none; }
+  ul.liste li::before { content:"✓"; position:absolute; left:0; color:var(--rouge); font-weight:700; }
+  .prix { font-size:2rem; color:var(--rouge); font-weight:700; }
+  .note { font-size:.85rem; color:#666; margin-top:12px; }
+  .galerie { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+  .galerie figure { margin:0; border-radius:12px; overflow:hidden; cursor:zoom-in; background:#ddd; }
+  .galerie img { width:100%; height:240px; object-fit:cover; display:block; transition:transform .3s; }
+  .galerie figure:hover img { transform:scale(1.04); }
+  .galerie .grande { grid-column:span 2; grid-row:span 2; }
+  .galerie .grande img { height:492px; }
+  #visionneuse { position:fixed; inset:0; background:rgba(0,0,0,.9); display:none; align-items:center; justify-content:center; z-index:100; cursor:zoom-out; padding:16px; }
+  #visionneuse.ouverte { display:flex; }
+  #visionneuse img { max-width:100%; max-height:100%; border-radius:8px; }
+  @media (max-width:600px){ .galerie .grande{grid-column:auto;grid-row:auto;} .galerie .grande img{height:240px;} }
+  footer { background:var(--vert); color:#fff; text-align:center; padding:30px 16px; font-size:.9rem; }
+  footer a { color:#fff; }
+  @media (max-width:600px){ header h1{font-size:1.6rem;} nav a{padding:10px 7px;font-size:.88rem;} .btn.clair{margin-left:0;} }
+</style>
+<style>
+  .etape { display:flex; gap:16px; align-items:flex-start; }
+  .num { flex:0 0 40px; height:40px; border-radius:50%; background:var(--rouge); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:1.1rem; }
+  .etape + .etape { margin-top:18px; }
+  .carte ul { margin:10px 0 0 18px; }
+  .carte li { margin:6px 0; }
+  .lien { font-weight:700; }
+  .astuce { background:#fff8e6; border-left:5px solid #d9a400; border-radius:10px; padding:14px 18px; margin-top:20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="../../logo.png" alt="Le Logis de Berthoult – Terres de Mémoires" style="max-width:380px;">
+  <h1>Finding your First World War ancestor near Arras and Vimy</h1>
+  <p class="sous">A free guide for Canadian and New Zealand families preparing a visit to the battlefields of Artois.</p>
+</header>
+
+<nav>
+  <a href="#canada">🇨🇦 Canada</a>
+  <a href="#nz">🇳🇿 New Zealand</a>
+  <a href="#visit">On the ground</a>
+  <a href="../">Stay with us</a>
+</nav>
+
+<section>
+  <h2>Before you travel</h2>
+  <p class="intro">A few hours of research at home will turn your trip into a real pilgrimage: you will know where your relative served, where he is buried or remembered, and which places to visit. Everything below uses official, online databases.</p>
+  <div class="carte">
+    <div class="etape"><div class="num">1</div><div><strong>Gather what the family knows.</strong> Full name, approximate date of birth, home town, regiment or battalion, service number if you have it. Old letters, photos and medals often hold these details.</div></div>
+    <div class="etape"><div class="num">2</div><div><strong>Check whether he died in the war.</strong> The Commonwealth War Graves Commission database lists Commonwealth servicemen who died, with their grave or memorial.<br><a class="lien" href="https://www.cwgc.org/find-records/find-war-dead/" target="_blank" rel="noopener">CWGC – Find War Dead ↗</a></div></div>
+    <div class="etape"><div class="num">3</div><div><strong>Find his service file</strong> in your national archives (see below). It tells you his unit, which in turn tells you where he fought.</div></div>
+    <div class="etape"><div class="num">4</div><div><strong>Plan your route.</strong> Note the cemetery, memorial or battlefield you want to see, and check the visitor information before you go.</div></div>
+  </div>
+</section>
+
+<section id="canada" style="padding-top:0;">
+  <h2>🇨🇦 For Canadian families</h2>
+  <div class="deux">
+    <div class="carte">
+      <h3>Service files</h3>
+      <p>Library and Archives Canada has put almost all Canadian Expeditionary Force service files online, usually with the full file and the attestation paper.</p>
+      <ul>
+        <li>Search by last name only, as some entries only show an initial.</li>
+        <li>Try spelling variations and the * wildcard (Fran* for Frank, Francis, François).</li>
+        <li>Early numbers with an “A” prefix were often changed to a “4”: try both.</li>
+      </ul>
+      <p style="margin-top:12px;"><a class="lien" href="https://www.canada.ca/en/library-archives/collection/research-help/military-history/first-world-war/fww-personnel.html" target="_blank" rel="noopener">Library and Archives Canada – First World War personnel records ↗</a></p>
+    </div>
+    <div class="carte">
+      <h3>Those who did not come home</h3>
+      <p>The Canadian Virtual War Memorial, run by Veterans Affairs Canada, is a registry of Canadians who died in uniform, with photos and stories added by families.</p>
+      <p><a class="lien" href="https://www.veterans.gc.ca/en/remembrance/memorials/canadian-virtual-war-memorial" target="_blank" rel="noopener">Canadian Virtual War Memorial ↗</a></p>
+      <p>The Canadian National Vimy Memorial bears the names of Canadian soldiers killed in France who have no known grave. If your relative is listed there, the CWGC record will say so.</p>
+    </div>
+  </div>
+</section>
+
+<section id="nz" style="padding-top:0;">
+  <h2>🇳🇿 For New Zealand families</h2>
+  <div class="deux">
+    <div class="carte">
+      <h3>Start with the Online Cenotaph</h3>
+      <p>Auckland War Memorial Museum's Online Cenotaph is a national database of people who served New Zealand, with records, photos and stories you can add to. It is also the easiest place to find a service number.</p>
+      <p><a class="lien" href="https://www.aucklandmuseum.com/war-memorial/online-cenotaph" target="_blank" rel="noopener">Online Cenotaph ↗</a></p>
+    </div>
+    <div class="carte">
+      <h3>Service records</h3>
+      <p>Archives New Zealand has digitised First World War service records, viewable online in its Collections search.</p>
+      <ul>
+        <li>Search by name or, better, by service number.</li>
+        <li>Use * to match variants (John Sm*).</li>
+        <li>Tick “Military Personnel Files” and “Digital copy available” to filter.</li>
+      </ul>
+      <p style="margin-top:12px;"><a class="lien" href="https://www.archives.govt.nz/find-a-record/world-war-one-service-records" target="_blank" rel="noopener">Archives NZ – WWI service records ↗</a></p>
+    </div>
+  </div>
+  <div class="astuce"><strong>Was he a tunneller?</strong> If his file mentions the New Zealand Tunnelling Company, a visit to the Wellington Quarry in Arras is a must: the tunnels his company dug still carry the names of New Zealand towns.</div>
+</section>
+
+<section id="visit" style="padding-top:0;">
+  <h2>On the ground</h2>
+  <div class="deux">
+    <div class="carte">
+      <h3>Places to see near the cottage</h3>
+      <ul>
+        <li><strong>Canadian National Vimy Memorial</strong>, trenches and Grange tunnel · ~15 min</li>
+        <li><strong>Wellington Quarry</strong>, Arras · ~15 min</li>
+        <li><strong>Ring of Remembrance</strong>, Notre-Dame-de-Lorette · ~20 min</li>
+        <li>The many Commonwealth war cemeteries of the Arras and Vimy area</li>
+      </ul>
+      <p class="note">Approximate driving times from Le Logis de Berthoult.</p>
+    </div>
+    <div class="carte">
+      <h3>Practical tips</h3>
+      <ul>
+        <li>Note the plot and row from the CWGC record: cemeteries can be large.</li>
+        <li>Bring a small poppy, a photo or a few words to leave at the grave.</li>
+        <li>Allow a full day for Vimy and Arras: there is a lot to take in.</li>
+        <li>Check opening times and tour details before you go.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="carte" style="text-align:center;max-width:700px;margin:0 auto;">
+    <h3 style="justify-content:center;">Make Le Logis de Berthoult your base</h3>
+    <p>A private, self-contained cottage in Bailleul-Sir-Berthoult, 15 minutes from Vimy Ridge and the Wellington Quarry. From €60 a night, booking direct.</p>
+    <a href="../#book" class="btn">See the cottage &amp; book</a>
+  </div>
+</section>
+
+<footer>
+  © <span id="annee"></span> Le Logis de Berthoult – EI Terres de Mémoires · <a href="../">English</a> · <a href="../../" hreflang="fr">Version française</a><br>
+  This guide links to official external websites; we are not affiliated with them.
+</footer>
+<script>document.getElementById("annee").textContent = new Date().getFullYear();</script>
+</body>
+</html>
