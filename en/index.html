@@ -1,1 +1,200 @@
-x
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Logis de Berthoult – Holiday cottage near Vimy Ridge &amp; Wellington Quarry, Arras</title>
+<meta name="description" content="A self-contained cottage in Bailleul-Sir-Berthoult, 15 minutes from the Canadian National Vimy Memorial and the Wellington Quarry in Arras. A welcoming base for Canadian and New Zealand visitors. From €60 a night, book direct.">
+<link rel="canonical" href="https://logisdeberthoult.fr/en/">
+<link rel="alternate" hreflang="en" href="https://logisdeberthoult.fr/en/">
+<link rel="alternate" hreflang="fr" href="https://logisdeberthoult.fr/">
+<link rel="icon" type="image/png" href="../logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Le Logis de Berthoult – Your base for Vimy Ridge and the Arras tunnels">
+<meta property="og:description" content="Self-contained cottage near Arras, 15 minutes from Vimy and the Wellington Quarry. From €60 a night.">
+<meta property="og:url" content="https://logisdeberthoult.fr/en/">
+<meta property="og:image" content="https://logisdeberthoult.fr/photo2.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Le Logis de Berthoult",
+  "description": "Self-contained holiday cottage in Bailleul-Sir-Berthoult, near Arras, the Canadian National Vimy Memorial and the Wellington Quarry.",
+  "url": "https://logisdeberthoult.fr/en/",
+  "image": "https://logisdeberthoult.fr/photo2.jpg",
+  "telephone": "+33617444957",
+  "email": "contact@logisdeberthoult.fr",
+  "priceRange": "From €60 per night",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4 Rue de la Neuville",
+    "addressLocality": "Bailleul-Sir-Berthoult",
+    "postalCode": "62580",
+    "addressCountry": "FR"
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --vert:#2f4a3a; --rouge:#b3322b; --bleu:#3f66a8; --creme:#f7f3ec; --texte:#2b2b2b; --sable:#c1bf9c; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Lato',sans-serif; color:var(--texte); background:var(--creme); line-height:1.65; }
+  h1,h2,h3 { font-family:'Playfair Display',serif; color:var(--vert); line-height:1.25; }
+  a { color:var(--bleu); }
+  header { background:var(--sable); text-align:center; padding:28px 16px 40px; }
+  header img.logo { width:100%; max-width:520px; height:auto; display:block; margin:0 auto; }
+  header h1 { font-size:2rem; margin-top:18px; }
+  header p.sous { margin:8px auto 0; max-width:640px; font-size:1.1rem; }
+  .btn { display:inline-block; background:var(--rouge); color:#fff; padding:12px 26px; border-radius:30px; text-decoration:none; font-weight:700; margin-top:22px; }
+  .btn.clair { background:#fff; color:var(--vert); margin-left:8px; }
+  nav { background:#fff; position:sticky; top:0; z-index:10; box-shadow:0 2px 6px rgba(0,0,0,.08); text-align:center; }
+  nav a { display:inline-block; padding:14px 12px; color:var(--vert); text-decoration:none; font-weight:700; }
+  section { max-width:960px; margin:0 auto; padding:56px 16px; }
+  section h2 { font-size:2rem; margin-bottom:18px; text-align:center; }
+  .intro { text-align:center; max-width:720px; margin:0 auto 28px; }
+  .deux { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .carte { background:#fff; border-radius:12px; padding:24px; box-shadow:0 2px 8px rgba(0,0,0,.06); }
+  .carte h3 { font-size:1.4rem; margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+  .carte p + p { margin-top:10px; }
+  .drapeau { font-size:1.6rem; }
+  .temps { display:inline-block; background:var(--creme); border-radius:20px; padding:2px 12px; font-size:.9rem; font-weight:700; color:var(--vert); margin-top:12px; }
+  .bandeau { background:var(--vert); color:#fff; }
+  .bandeau h2 { color:#fff; }
+  .bandeau .intro { color:#e9ecea; }
+  .symboles { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+  .symboles div { background:rgba(255,255,255,.08); border-radius:12px; padding:18px; }
+  .symboles strong { display:block; font-size:1.05rem; margin-bottom:4px; }
+  .photos { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; }
+  .photos img { width:100%; height:220px; object-fit:cover; border-radius:12px; display:block; }
+  ul.liste { list-style:none; }
+  ul.liste li { padding:8px 0 8px 28px; position:relative; border-bottom:1px solid #eee; }
+  ul.liste li:last-child { border-bottom:none; }
+  ul.liste li::before { content:"✓"; position:absolute; left:0; color:var(--rouge); font-weight:700; }
+  .prix { font-size:2rem; color:var(--rouge); font-weight:700; }
+  .note { font-size:.85rem; color:#666; margin-top:12px; }
+  footer { background:var(--vert); color:#fff; text-align:center; padding:30px 16px; font-size:.9rem; }
+  footer a { color:#fff; }
+  @media (max-width:600px){ header h1{font-size:1.6rem;} nav a{padding:10px 7px;font-size:.88rem;} .btn.clair{margin-left:0;} }
+</style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="../logo.png" alt="Le Logis de Berthoult – Terres de Mémoires">
+  <h1>A home for Canadian and New Zealand visitors in the Arras countryside</h1>
+  <p class="sous">A self-contained cottage in Bailleul-Sir-Berthoult, 15 minutes from Vimy Ridge and the Wellington Quarry.</p>
+  <a href="#book" class="btn">Book direct from €60 a night</a>
+  <a href="../" class="btn clair" hreflang="fr">Version française</a>
+</header>
+
+<nav>
+  <a href="#memory">Remembrance</a>
+  <a href="#cottage">The cottage</a>
+  <a href="#getting-here">Getting here</a>
+  <a href="#book">Book</a>
+</nav>
+
+<section id="memory">
+  <h2>Walk in their footsteps</h2>
+  <p class="intro">
+    The land around Le Logis de Berthoult is where Canadian and New Zealand soldiers made history in the spring of 1917.
+    If you are coming to see where a great-grandfather fought, tunnelled or is remembered, we would be glad to be your base.
+  </p>
+  <div class="deux">
+    <div class="carte">
+      <h3><span class="drapeau">🇨🇦</span> For Canadian visitors</h3>
+      <p><strong>Canadian National Vimy Memorial.</strong> On 9 April 1917, the four divisions of the Canadian Corps attacked together for the first time and took Vimy Ridge. The memorial, with its preserved trenches and the Grange tunnel, stands just north of the cottage.</p>
+      <p>Entry to Canadian memorial sites is free. Guided tours of the trenches and tunnel are offered on a first-come, first-served basis, so arriving early is a good idea between April and November.</p>
+      <span class="temps">~ 15 min by car</span>
+    </div>
+    <div class="carte">
+      <h3><span class="drapeau">🇳🇿</span> For New Zealand visitors</h3>
+      <p><strong>Wellington Quarry (Carrière Wellington), Arras.</strong> Some 500 men of the New Zealand Tunnelling Company, including Māori and Pacific Islanders, worked with British tunnellers to link the medieval chalk quarries under Arras. They named them after home: Auckland, Wellington, Nelson, Blenheim, Christchurch and Dunedin.</p>
+      <p>Thousands of soldiers sheltered underground before the attack of 9 April 1917. A memorial wall honours the tunnellers, and a dawn ceremony is held there every year on 9 April.</p>
+      <span class="temps">~ 15 min by car</span>
+    </div>
+  </div>
+</section>
+
+<section class="bandeau">
+  <h2>A logo with a story</h2>
+  <p class="intro">Every symbol on our logo was chosen to honour this shared history.</p>
+  <div class="symboles">
+    <div><strong>🍁 The maple leaf</strong>For the Canadians of Vimy Ridge.</div>
+    <div><strong>🥝 The kiwi</strong>For the New Zealand tunnellers of Arras.</div>
+    <div><strong>🌺 The poppy</strong>The Commonwealth flower of remembrance.</div>
+    <div><strong>💠 The cornflower</strong>Le bleuet, France's own flower of remembrance.</div>
+  </div>
+</section>
+
+<section id="cottage">
+  <h2>The cottage</h2>
+  <p class="intro">
+    A private, self-contained home with its own entrance, decorated in tribute to the region's First World War and mining heritage.
+  </p>
+  <div class="photos">
+    <img src="../photo2.jpg" alt="The living room with sofa, TV and posters of Arras, Lens and the slag heaps">
+    <img src="../photo3.jpg" alt="The fully equipped kitchen">
+    <img src="../photo7.jpg" alt="The double bedroom with en-suite shower room">
+  </div>
+  <div class="deux" style="margin-top:20px;">
+    <div class="carte">
+      <h3>What's inside</h3>
+      <ul class="liste">
+        <li>Private entrance, the whole place is yours</li>
+        <li>Fully equipped kitchen with oven, hob, microwave and coffee machine</li>
+        <li>Double bedroom with shower room</li>
+        <li>Living room with TV and dining table</li>
+        <li>Washer-dryer, handy on a longer trip</li>
+      </ul>
+    </div>
+    <div class="carte" style="text-align:center;">
+      <h3 style="justify-content:center;">Rates</h3>
+      <p class="prix">from €60</p>
+      <p>per night, no cleaning fee, 1 night minimum</p>
+      <p class="note">Prices vary with weekends and seasons. Booking direct is always our best price, with no platform fees.</p>
+      <a href="../#logis" class="btn" hreflang="fr">See all photos</a>
+    </div>
+  </div>
+</section>
+
+<section id="getting-here">
+  <h2>Getting here</h2>
+  <div class="deux">
+    <div class="carte">
+      <h3>From Paris or the airports</h3>
+      <p>Fast TGV trains link Paris Gare du Nord to Arras in under an hour. The cottage is about 15 minutes by car from Arras station.</p>
+      <p>By car, the cottage is about 10 minutes from the A1 (Paris – Lille) and the A26 (Calais – Reims), so it is easy to reach from Paris airports, Lille or the Channel ports.</p>
+    </div>
+    <div class="carte">
+      <h3>Also nearby</h3>
+      <ul class="liste">
+        <li>Ring of Remembrance, Notre-Dame-de-Lorette · ~20 min</li>
+        <li>Arras Grand'Place and UNESCO belfry · ~15 min</li>
+        <li>Vauban Citadel, Arras (UNESCO) · ~20 min</li>
+        <li>Louvre-Lens museum, free entry to the main gallery · ~20 min</li>
+      </ul>
+      <p class="note">Approximate driving times from the cottage.</p>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <h2>Book your stay</h2>
+  <div class="carte" style="max-width:640px;margin:0 auto;text-align:center;">
+    <p>Check availability on our calendar (in French: pick your arrival, then your departure date), or simply write to us with your dates.</p>
+    <a href="../#reserver" class="btn" hreflang="fr">Check availability</a>
+    <p style="margin-top:22px;">📧 <a href="mailto:contact@logisdeberthoult.fr?subject=Booking%20request%20-%20Le%20Logis%20de%20Berthoult">contact@logisdeberthoult.fr</a></p>
+    <p>📞 <a href="tel:+33617444957">+33 6 17 44 49 57</a></p>
+    <p>📍 4 Rue de la Neuville, 62580 Bailleul-Sir-Berthoult, France</p>
+  </div>
+</section>
+
+<footer>
+  © <span id="annee"></span> Le Logis de Berthoult – EI Terres de Mémoires · <a href="../" hreflang="fr">Version française</a><br>
+  Photos: 5studio
+</footer>
+<script>document.getElementById("annee").textContent = new Date().getFullYear();</script>
+</body>
+</html>
